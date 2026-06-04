@@ -1,0 +1,405 @@
+STLC (Software Testing Life Cycle) -
+
+1. Requirement Analysis
+2. Test Planning
+3. Test Case Development
+4. Test Environment Setup
+5. Test Execution
+6. Test Cycle Closure
+
+Types of Testing -
+
+1. Manual
+2. Automation
+
+Types of Manual Testing
+
+1. White Box Testing
+2. Black Box Testing
+3. Grey Box Testing
+
+White Box Testing - Done By developer
+
+Black Box Techniques -
+
+Equivalence Partitioning
+Boundary Value Analysis
+Decision Table Testing
+
+State Transition Testing
+Use Case Testing
+Error Guessing
+Exploratory Testing
+Pairwise Testing
+
+Types of Black Box -
+
+ 1.Functional Testing
+ 2.Non-Functional Testing
+
+Types of Functional
+
+Smoke Testing, Sanity Testing, Regression Testing,  User Acceptance Testing (UAT)
+Integration Testing, System Testing, End-to-End (E2E) Testing
+Exploratory Testing, Usability Testing
+
+Types of Non-Functional -
+
+Performance Testing,  Load Testing, Stress Testing, Scalability Testing
+Stability Testing, Security Testing,  Compatibility Testing,
+Localization Testing, Accessibility Testing
+
+Test Case Development -
+
+Test Documentation - Examples
+
+• Test Plan
+• Test Cases
+• Test Scenario Documents
+• Traceability Matrix
+• Test Summary Report
+
+Test Management -
+
+Test Plan, Test Cases Review, RTM
+
+Test plan -
+
+• Objective
+• Scope (In-Scope/Out-of-Scope)
+• Test strategy
+• Entry/Exit criteria
+• Schedule
+• Risks and mitigation
+
+Test Case -
+
+Test Case ID, description, preconditions, steps, expected result, actual result, status.
+
+Test Scenario is broad (what to test).
+Test Case is detailed (how to test).
+
+Defect Tracking -
+
+Defect Life Cycle
+
+1. New: Tester logs the defect.
+2. Assigned: Defect is assigned to a developer.
+3. Open: Developer starts working on it.
+4. Fixed: Developer fixes the defect.
+5. Retest: Tester retests to verify the fix.
+6. Closed: Defect is confirmed fixed.
+7. Reopened: If the defect reappears.
+
+Bug Life Cycle
+
+Defect Management -
+
+Defect Leakage, Defect Density, Defect Clustering, Bug Triage
+Showstopper Defect, Latent Defect, Masked Defect,  Root Cause Analysis (RCA)
+
+
+ Test Metrics & Measurement -
+
+Test Metrics, Test Coverage, Requirement Coverage, Code Coverage
+Test Execution Status, Test Case Effectiveness?, Defect Removal Efficiency (DRE)
+Test Productivity, Mean Time to Detect (MTTD), Mean Time to Repair (MTTR)
+
+
+1. Test Plan
+
+Definition:
+A Test Plan is a detailed document that describes what to test, how to test, when to test, and who will test.
+
+Key Points:
+
+Project-specific (changes for every project)
+Created by: Test Manager / QA Lead
+Covers:
+Scope
+Objectives
+Resources
+Schedule
+Risks
+Test environment
+
+Example:
+For a banking app:
+
+Test login, fund transfer, account balance
+Assign testers
+Define timelines
+
+🔹 2. Test Strategy
+
+Definition:
+A Test Strategy is a high-level document that defines the overall testing approach.
+
+Key Points:
+
+Organization-level or long-term
+Mostly static (rarely changes)
+Created by: Senior QA / Management
+Covers:
+Testing types (functional, regression, performance)
+Tools to use (Selenium, JMeter)
+Standards & guidelines
+
+Example:
+
+Automation for regression
+Manual testing for UI
+Use Agile methodology
+
+🔹 3. Test Scenario
+
+Definition:
+A Test Scenario is a high-level test condition that defines what functionality to test.
+
+Key Points:
+
+Derived from requirements
+No detailed steps
+Covers user actions
+
+Example:
+
+Verify login functionality
+Verify password reset
+Verify checkout process
+🔥 Key Differences (Quick Table)
+Aspect	Test Plan 📝	Test Strategy 📊	Test Scenario 🎯
+Level	Detailed	High-level	Very high-level
+Purpose	Execution planning	Testing approach	What to test
+Scope	Project-specific	Organization-wide	Feature-specific
+Created By	QA Lead / Manager	Senior Management	QA/Testers
+Changes	Frequently updated	Rarely changes	Can change often
+Includes Steps?	Yes (indirectly via cases)	No	No
+💡 Simple Way to Remember
+Test Strategy = "How we test"
+Test Plan = "What, when, who tests"
+Test Scenario = "What to test (high-level)"
+
+If you want, I can also give:
+✅ Real-time project examples
+✅ Difference between Test Scenario vs Test Case (very commonly asked)
+✅ Interview answers in 2–3 lines (perfect for quick responses)
+
+
+BRS
+ ↓
+SRS
+ ↓
+Test Strategy
+ ↓
+Test Plan
+ ↓
+Test Scenarios
+ ↓
+Test Cases
+ ↓
+Test Data
+ ↓
+Test Execution
+ ↓
+Defects
+ ↓
+Test Report
+
+
+
+🔹 1. BRS (Business Requirement Specification)
+
+What it is:
+
+High-level business needs (client perspective)
+
+Example:
+
+User should be able to transfer money
+User should login securely
+
+👉 No technical details
+
+🔹 2. SRS (Software Requirement Specification)
+
+What it is:
+
+Detailed functional + technical requirements (system perspective)
+
+Includes:
+
+Functional requirements
+Non-functional (performance, security)
+UI behavior
+API details
+
+👉 This is the main input for QA
+
+🔹 3. Test Strategy (High-Level Approach)
+
+Derived From: SRS + Organization standards
+
+Defines:
+
+Testing types (functional, regression, automation)
+Tools (Selenium, TestNG)
+Environments
+Risk handling
+
+👉 Stable document (rarely changes)
+
+🔹 4. Test Plan (Project-Level Planning)
+
+Derived From: SRS + Test Strategy
+
+Defines:
+
+Scope (what to test / not test)
+Timeline
+Resources
+Roles & responsibilities
+Entry/Exit criteria
+
+👉 Project-specific and dynamic
+
+🔹 5. Test Scenarios (High-Level Conditions)
+
+Derived From: SRS
+
+Examples:
+
+Verify login functionality
+Verify fund transfer
+Verify logout
+
+👉 No steps, just coverage points
+
+🔹 6. Test Cases (Detailed Steps)
+
+Derived From: Test Scenarios
+
+Includes:
+
+Preconditions
+Test steps
+Expected results
+Actual results
+
+Example:
+
+Enter username/password → Click login → Verify dashboard
+
+🔹 7. Test Data
+
+What it is:
+
+Input values for testing
+
+Examples:
+
+Valid login → user123 / pass123
+Invalid login → wrong password
+
+🔹 8. Test Execution
+
+What happens:
+
+Run test cases
+Mark:
+Pass ✅
+Fail ❌
+
+🔹 9. Defect/Bug Logging
+
+When: Test case fails
+
+Logged in tools:
+JIRA, Bugzilla
+Includes:
+
+Steps to reproduce
+Severity / Priority
+Screenshots
+
+🔹 10. Test Reporting
+
+Final output:
+
+Test summary report
+Metrics:
+Passed/Failed cases
+Defect count
+Coverage
+🔥 Visual Flow (Interview Gold Answer)
+
+BRS
+ ↓
+SRS
+ ↓
+Test Strategy
+ ↓
+Test Plan
+ ↓
+Test Scenarios
+ ↓
+Test Cases
+ ↓
+Test Data
+ ↓
+Test Execution
+ ↓
+Defects
+ ↓
+Test Report
+
+Testing Execution Order
+
+1. Smoke Testing (Build Verification Testing)
+✅ First thing you do after getting a new build
+🎯 Purpose: Check if the build is stable enough for testing
+🔍 Covers: Critical functionalities only (login, app launch, basic navigation)
+
+👉 If Smoke fails → Reject the build ❌
+
+2. Sanity Testing
+✅ Done after smoke passes OR after minor changes / bug fixes
+🎯 Purpose: Verify specific functionality is working fine
+🔍 Focused & narrow testing (not full coverage)
+
+👉 If Sanity fails → Send back for fix ❌
+
+3. Regression Testing
+✅ After sanity passes and build is stable
+🎯 Purpose: Ensure existing features are not broken
+🔍 Covers previously tested modules
+
+👉 Usually automated using Selenium/TestNG
+
+4. Functional Testing
+🎯 Purpose: Validate all features against requirements (SRS/BRD)
+🔍 Includes:
+UI testing
+API testing
+Integration testing
+
+5. System Testing
+🎯 Purpose: Test the entire application as a whole
+🔍 End-to-end scenarios
+
+6. User Acceptance Testing (UAT)
+🎯 Done by client/business users
+🔍 Validates if system meets business needs
+
+7. Ad-hoc / Exploratory Testing
+🎯 Random testing to find unexpected bugs
+🔍 No predefined test cases
+
+8. Retesting
+🎯 Verify fixed defects
+🔁 Done after bug fixes
+
+Again Cloud will come in this Summer
+Again Rain will start and will give you relief from summer
+All you complains about will vanish like a magic
+You will

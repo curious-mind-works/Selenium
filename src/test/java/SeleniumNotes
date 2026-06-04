@@ -1,0 +1,752 @@
+Day-21
+
+Selenium WebDriver:-
+-------------------
+
+What is Selenium Webdriver?
+
+WebDriver is one of the component in selenium.
+WebDriver is a java interface.
+WebDriver is an API (Application Programming interface)
+
+Selenium WebDriver (Interface) ---- RemoteWebDriver (Class) ----> ChromeDriver , FirefoxDriver , EdgeDriver etc..
+
+-------------------------------------------------------------------------------------------------------
+Day-22
+
+Locators:-
+---------
+
+1.ID
+2.Name
+3.Class Name
+4.Tag Name
+5.Link Text
+6.PartialLink Text
+7.CSS Selector
+8.XPath
+
+//ID
+driver.findElement(By.id("username"));
+
+//Name
+driver.findElement(By.name("email"));
+
+//ClassName
+driver.findElement(By.className("login-btn"));
+
+//TagName
+driver.findElements(By.tagName("a"));
+
+//LinkText
+driver.findElement(By.linkText("Forgot Password?"));
+
+//PartialLinkText
+driver.findElement(By.partialLinkText("Forgot"));
+
+//CSS Selector
+driver.findElement(By.cssSelector("#username"));
+driver.findElement(By.cssSelector(".login-btn"));
+
+//Xpath
+driver.findElement(By.xpath("//input[@id='username']"));
+
+------------------------------------------------------------------------------------------------
+Day-23
+
+CSS Selector:- (Cascading Style Sheets):-
+----------------------------------------
+
+Faster than XPath (generally)
+Cleaner and shorter syntax
+Well supported by all browsers
+Good for dynamic elements (with partial matching)
+
+tag id                →  tag#id
+tag class             →  tag.classname
+tag attribute         →  tag[attribute="value"]
+tag class attribute   →  tag.classname[attribute="value"]
+
+Contains (Partial Match)
+
+Starts with:          ->  input[id^='em']
+Ends with:            ->  input[id$='il']
+Contains:             ->  input[id*='mai']
+
+-----------------------------------------------------------------------------------------------
+Day-24
+
+XPath:-
+------
+
+Types of Xpath:-
+---------------
+
+1) Absolute xpath (full xpath) - Absolute xpath traverse through each node till it finds element.
+
+Ex: /html/body/header/div/div/div/div[2]/div/input
+
+2) Relative xpath (partial xpath) - Relative xpath directly jump and find the element by using attribute.
+
+Ex: //*[@id="search"]/input
+
+Difference between Absolute & Relative xpaths?
+
+Absolute xpath starts with /  ---> represents root node
+Relative xpath starts with //
+
+Absolute xpath do not use attributes
+Relative xpath works with attribute
+
+Absolute xpath traverse through each node till it finds element
+Relative xpath directly jump and find the element by using attribute
+
+//*[@id = '']
+//tagName[@id = '']
+//*[@id=''][@class='']
+//*[@id = '' and @tagName = '']
+//*[@id = '' or @tageName = '']
+//*[contains(@id, '')]
+//*[starts-with(@id, '')]
+//*[text() = '']
+//*[contains(text(),'')]
+
+Chained xpath:-
+--------------
+//div[@id='']/a/img/[@id='']
+
+---------------------------------------------------------------------------------------------------
+Day-25
+
+xpath axes
+self
+parent
+child
+ancestor
+descendent
+following
+preceding
+following-sibling
+preceding-sibling
+
+findElement vs findElements
+
+1) findElement:-
+---------------
+Finds a single WebElement.
+Returns the first matching element on the page.
+If element is not found → throws NoSuchElementException.
+
+2) findElements:-
+----------------
+Finds multiple WebElements.
+Returns a List<WebElement>.
+If no element found → returns empty list (size = 0).
+Does NOT throw exception.
+
+Exceptions in Selenium:-
+-----------------------
+
+1) NoSuchElementException:- When element is not present in the DOM (page source).
+
+Usually caused by:-
+Wrong locator
+Page not fully loaded
+Frame not switched
+Dynamic element not yet loaded
+
+2) ElementNotInteractableException:- Element is present in DOM but cannot be interacted with.
+
+Element may be:-
+Hidden
+Disabled
+Covered by another element
+Not yet ready for interaction
+
+3) InvalidElementStateException:- When element state is not appropriate for action.
+
+Trying to type into:-
+Disabled input field
+Read-only field
+Trying to clear a non-editable field
+
+4) StaleElementReferenceException:-
+
+Occurs when the element you previously located is no longer attached to the DOM.
+This usually happens when the page refreshes, reloads, or dynamically updates the element.
+
+Page refresh or navigation
+DOM updated via JavaScript/AJAX
+Element re-rendered (React/Angular apps)
+Switching between frames/windows
+
+NoSuchFrameException - When we try to switch to a frame but the targeted frame is not present.
+NoSuchWindowException - When we try to switch to a window but the targeted window is not present.
+NoSuchAttributeException - When we are trying to fetch an attribute's value but the attribute is not correct
+
+TimeoutException - When a command execution gets timeout.
+WebDriverException - When there is some issue with driver instance preventing it from getting launched
+
+Handling Dynamic Web Elements in Selenium:–
+
+Use dynamic XPath with contains() or starts-with() when attributes change.
+Avoid absolute XPath; prefer relative XPath.
+Use stable attributes like name, class, placeholder, or data-*.
+Use Explicit Wait (WebDriverWait) for dynamically loaded elements.
+Handle StaleElementReferenceException by re-locating the element.
+Use indexing carefully if multiple similar elements exist.
+Use JavaScriptExecutor if normal click fails.
+For dynamic tables, use custom XPath based on text.
+
+---------------------------------------------------------------------------------------------------
+Day - 26
+
+Selenium WebDriver Methods:-
+---------------------------
+
+1) Get methods
+2) Conditional methods
+3) Browser methods
+4) Navigational methods
+5) Wait methods
+
+1. Get methods:- These methods are used to get information from the browser or web page.
+
+driver.get("https://google.com");        // Open URL
+driver.getTitle();                       // Get page title
+driver.getCurrentUrl();                  // Get current URL
+driver.getPageSource();                  // Get page HTML source
+driver.getWindowHandle();                // Get current window ID
+driver.getWindowHandles();               // Get all window IDs
+
+2. Conditional Methods:- - These methods are used to check the condition/state of a web element. returns boolean value (true/false)
+
+isDisplayed();     // Is element visible?
+isEnabled();       // Is element enabled?
+isSelected();      // Is checkbox/radio selected?
+
+3. Browser Methods:- These methods control the browser window.
+
+driver.close();                               // Close current browser window
+driver.quit();                                // Close all browser windows
+driver.manage().window().maximize();          // Maximize window
+driver.manage().window().minimize();          // Minimize window
+driver.manage().window().fullscreen();        // Full screen
+
+4. Navigational Methods:- These methods are used to navigate between pages.
+
+driver.navigate().to("https://amazon.com");
+driver.navigate().back();
+driver.navigate().forward();
+driver.navigate().refresh();
+
+driver.get() ---> Accepts URL in string format only
+driver.navigate().to() ---> accepts URL in the string format & URL object format.
+
+------------------------------------------------------------------------------------------------------
+Day-27
+
+Wait commands: -
+--------------
+
+Synchronization Issue:-
+----------------------
+When Selenium executes faster than the web application loads, it throws errors like:
+NoSuchElementException, ElementNotInteractableException, TimeoutException. To avoid this, We use Waits.
+
+1) Implicit Wait:- Implicit Wait tells Selenium to wait for a specific amount of time before throwing NoSuchElementException.
+-----------------
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+Uses:-
+1) Applied only once.
+2) It will not wait till maximum time if the element is available
+3) Applicable for all the elements
+4) Easy to use
+5) Default value = 0 seconds.
+6) if the time is not sufficient then you will get exception
+
+2) Explicit Wait:- Explicit Wait tells Selenium to wait until a specific condition occurs before proceeding further.
+-----------------
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement loginBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));
+
+Uses:-
+1) Conditional based, it will work more effectively.
+2) Finding element is inclusive( for some conditions)
+3) It will wait for condition to be true, then consider the time
+4) We need to write multiple statements for multiple elements
+5) More flexible
+
+Common Conditions:-
+------------------
+
+visibilityOfElementLocated
+elementToBeClickable
+presenceOfElementLocated
+titleContains
+alertIsPresent
+
+3) Fluent Wait:- Fluent Wait is an advanced explicit wait with polling and exception handling.
+---------------
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+   .withTimeout(Duration.ofSeconds(time))
+   .pollingEvery(Duration.ofSeconds(time))
+   .ignoring(NoSuchElementException.class);
+
+WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+   public WebElement apply(WebDriver driver) {
+       return driver.findElement(By.id("foo"));
+   }
+});
+
+Uses:-
+1) Checks condition every polling interval (e.g., 2 seconds).
+2) Useful for dynamic elements.
+3) Most flexible wait.
+
+-----------------------------------------------------------------------------------------------------------------
+Day-29
+
+Alerts/popups:-
+-------------
+Alert alert = driver.switchTo().alert();
+
+alert.accept()
+alert.dismiss()
+alert.getText()
+alert.sendKeys(text)
+
+Authenticated popup:-
+--------------------
+
+http://the-internet.herokuapp.com/basic_auth
+http://username:password@the-internet.herokuapp.com/basic_auth
+http://admin:admin@the-internet.herokuapp.com/basic_auth
+
+-----------------------------------------------------------------------------------------------------
+Day-30
+
+frames/iframes:-
+---------------
+
+driver.switchTo().frame(name)
+driver.switchTo().frame(id)
+driver.switchTo().frame(WebElement)
+driver.switchTo().frame(index)
+
+driver.switchTo().defaultContent() -> Return to main frame
+
+
+3 Types of Switching Methods
+----------------------------
+1) Browser windows
+  driver.switchTo().window(windowID/window handle)
+
+2) Alerts
+  driver.switchTo().alert()
+  driver.switchTo().accept()
+  driver.switchTo().dismiss()
+
+3) Frames
+  driver.switchTo().frame(id);
+  driver.switchTo().frame(name);
+  driver.switchTo().frame(WebElement);
+
+Window Handle: -
+--------------
+
+  Set<String> windows = driver.getWindowHandles();
+
+  for (String window : windows) {
+      if (window.equals("url")) {
+          driver.switchTo().window(window);  // switch to child window
+          break;
+      }
+  }
+
+---------------------------------------------------------------------------------------------------
+
+Day-31
+Dropdown:-
+---------
+
+1.Select dropdown
+2.Bootstrap dropdown
+3.Hidden drop down
+
+Select Dropdown:- Select class works only when tag name = <select>.
+----------------
+
+WebElement dropdown = driver.findElement(By.id("country"));
+Select sel = new Select(dropdown);
+
+// 1. Select by visible text
+sel.selectByVisibleText("India");
+
+// 2. Select by value
+sel.selectByValue("ind");
+
+// 3. Select by index
+sel.selectByIndex(0);
+
+Bootstrap dropdown:- They are usually created using <div>, <ul>, <li>.
+-------------------
+
+// Click dropdown button
+driver.findElement(By.xpath("//button[text()='Dropdown']")).click();
+
+// Click option
+driver.findElement(By.xpath("//a[text()='Option 1']")).click();
+
+Hidden drop down:-
+-----------------
+Hidden dropdown means options are present but not visible initially. They become visible only after: Hover, Click, JavaScript
+
+We can Use Click, Action Class and JavascriptExecutor for this
+--------------------------------------------------------------------------------------------------------
+Day-32
+
+Web Tables:-
+-----------
+
+1) Static web table:- A Static Web Table has fixed data. The number of rows and columns does not change dynamically.
+--------------------
+
+2) Dynamic web table:- A Dynamic Web Table contains data that changes dynamically (like stock prices, user list, search results).
+---------------------
+
+3) Table with pagination:- When table data is split across multiple pages using:
+-------------------------
+
+-----------------------------------------------------------------------------------------------------
+Day-33
+Dynamic table with pagination:-
+------------------------------
+
+
+------------------------------------------------------------------------------------------------------
+Day-34
+
+Date Pickers:-
+-------------
+
+1) Normal Input Date Field (sendKeys)
+
+WebElement date = driver.findElement(By.id("date"));
+date.sendKeys("20/02/2026");
+
+2) Standard Calendar (Click & Select)
+
+driver.findElement(By.id("date")).click();
+
+// Select month
+Select month = new Select(driver.findElement(By.className("ui-datepicker-month")));
+month.selectByVisibleText("February");
+
+// Select year
+Select year = new Select(driver.findElement(By.className("ui-datepicker-year")));
+year.selectByVisibleText("2026");
+
+// Select day
+driver.findElement(By.xpath("//a[text()='20']")).click();
+
+3) Dynamic Date Picker (No Select Class)
+
+driver.findElement(By.id("date")).click();
+
+while(true)
+{
+    String monthYear = driver.findElement(By.className("ui-datepicker-title")).getText();
+
+    if(monthYear.equals("February 2026"))
+        break;
+    else
+        driver.findElement(By.xpath("//a[@title='Next']")).click();
+}
+
+driver.findElement(By.xpath("//a[text()='20']")).click();
+
+4) Handling Read-Only Date Field (Using JavaScript)
+
+WebElement date = driver.findElement(By.id("date"));
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].value='20/02/2026';", date);
+
+
+------------------------------------------------------------------------------------------------------
+Day-35
+
+Mouse actions:-
+--------------
+
+WebElement element = driver.findElement(By.xpath("")));
+
+// Create Actions
+Actions action = new Actions(driver);
+
+// Mouse
+actions.moveToElement(element);
+actions.moveByOffset(10, 20);
+actions.click(element);
+actions.doubleClick(element);
+actions.contextClick(element);                                  // right-click
+actions.clickAndHold(element).moveToElement(target).release();
+
+Actions - pre defined class provided in selenium
+
+build() - create an action
+perform() - complete an action
+
+getText() Vs getAttribute(attribute)
+-----------------------------------
+<input id="xyz"> welcome </input>
+
+getText() --> returns the inner text    --> welcome
+getAttribute("id") -- returns the value of attribute ---> xyz
+
+<input value="welcome"></input>
+getAttribute("value") ---> welcome
+
+getText() ----> returns inner text of the web element
+getAttribute(attribute)--->> returns value of attribute
+
+Actions Vs Action:-
+------------------
+Actions -- class, will be used to perform mouse actions,
+Action --- interface, will be used to store created actions.
+
+------------------------------------------------------------------------------------------------
+Day-36
+
+Slider:- A Slider is a UI element that allows users to select a value by dragging a handle horizontally or vertically
+-------
+
+WebElement slider = driver.findElement(By.id("slider"));
+Actions act = new Actions(driver);
+
+//Using MoveByOffset
+act.clickAndHold(slider)
+   .moveByOffset(50, 0)   // 50 pixels right, 0 vertical
+   .release()
+   .perform();
+
+//Using Drag&Drop
+act.dragAndDropBy(slider, 50, 0).perform();
+
+
+
+Keyboard actions:-
+-----------------
+
+1) keyDown:- Used to press and hold a key.
+2) keyUp:- Used to release a pressed key, Must be used after keyDown().
+
+Ex: Ctrl+shift+A
+act.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).sendKeys("A").keyUp(Keys.SHIFT).keyUp(Keys.CONTROL).perform();
+
+Ex: Enter
+act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).perform();
+
+//Control+Relink
+act.keyDown(Keys.CONTROL).click(regLink).keyUp(Keys.CONTROL).perform();
+
+-------------------------------------------------------------------------------------------------
+Day-37
+
+JavascriptExecutor:- Interface
+-------------------
+
+WebElement element = driver.findElement(By.xpath(""));
+
+JavascriptExecutor js = (JavascriptExecutor)driver;  ----> Declare
+
+//sendKeys
+js.executeScript("arguments[0].setAttribute('value','ankit')",element);
+
+//click
+js.executeScript("arguments[0].click()", element);
+
+Scrolling Bar:-
+--------------
+
+// Scroll by using any pixel number
+js.executeScript("window.scrollBy(0,500)", "");
+
+// Scroll by using any fixed web element
+js.executeScript("arguments[0].scrollIntoView();",element);
+
+// Scroll till end of the page
+js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+
+
+Upload files:-
+-------------
+
+// Locate file upload element
+WebElement upload = driver.findElement(By.id("uploadFile"));
+
+// Provide full file path
+upload.sendKeys("C:\\Users\\Ankit\\Desktop\\resume.pdf");
+
+// Upload Multiple Files
+
+ File file1 = "C:\\Users\\Ankit\\Desktop\\resume1.pdf"
+ File file2 = "C:\\Users\\Ankit\\Desktop\\resume2.pdf"
+
+ upload.sendkeys(file1 +"\n"+ file2);
+
+-------------------------------------------------------------------------------------------------
+Day-38
+
+Capture screenshots:-
+-------------------
+
+//Capture screenshot of full page
+
+TakesScreenshot ts = (TakesScreenshot)driver;
+File srcfile = ts.getScreenshotAs(OutputType.FILE);
+File trgtfile = new File(System.getProperty("user.dir")+"\\screenshot\\fullpage.png");
+srcfile.renameTo(trgtfile); //copy srcfile to trgtfile
+
+//Selenium version 4 have these functionality
+
+//Capture screenshot of particular page
+
+WebElement particularpage = driver.findElement(By.xpath("//*[@alt='RT']"));
+File srcfile1 = particularpage.getScreenshotAs(OutputType.FILE);
+File trgtfile1 = new File(System.getProperty("user.dir")+"\\screenshot\\specificpage.png");
+
+//Capture screenshot of specific element
+
+WebElement specificelement = driver.findElement(By.xpath("//*[@id='nav-logo-sprites']"));
+File srcfile2 = specificelement.getScreenshotAs(OutputType.FILE);
+File trgtfile2 = new File(System.getProperty("user.dir")+"\\screenshot\\specificpage.png");
+
+ChromeOptions:-
+--------------
+
+ChromeOptions
+EdgeOptions
+FirefoxOptions etc..
+
+1) Headless testing
+
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless=new");
+
+Advantages
+1) we can do multiple tasks( since execution happend backend)
+2) faster execution
+
+Disadvantage
+1) user cannot see the actions on the page. so he cannot understand flow/functionality of the test
+
+2) SSL Handling:-
+----------------
+
+ChromeOptions options = new ChromeOptions();
+options.setAcceptInsecureCerts(true); // accepts SSL certificates
+
+to remove "Chrome is being controlled by automated test software"
+-------------------------------------------------
+ChromeOptions options=new ChromeOptions();
+options.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
+
+To run the tests in Incognito mode
+----------------------------------
+ChromeOptions options=new ChromeOptions();
+options.addArguments("--incognito");
+
+Enable extensions in browser
+----------------------------
+step 1: Add CRX Extractor/Downloader to chrome Browser  ( manually)
+Step2: Add SelectorsHub plugin to chrome browser (manually)
+step3: Capture crx file for selectorshub extension
+Step4: pass crx file path in automation script in Chrome Options
+
+Enable browser extension in run time
+-------------------------------------
+ChromeOptions options=new ChromeOptions();
+options.addExtensions(new File("C:\\Drivers\\SelectorsHub.crx"));
+
+How to block ads on the page
+----------------------------
+uBlock-Origin
+AdBlocker
+
+----------------------------------------------------------------------------------------------------
+Day-39
+
+Broken Links:-
+-------------
+1) Link    href="https://xyz.com"
+
+2) https://xyz.com ---> server ---> status code
+
+3) status code>=400   broken link
+   status code <400   not a broken link
+
+
+// Code:-
+
+    List<WebElement> links = driver.findElements(By.tagName("a"));
+
+           for(WebElement link : links) {
+
+               String url = link.getAttribute("href");
+
+               if(url == null || url.isEmpty())
+               {
+                   continue;
+               }
+
+               URL linkURL = new URL(url);
+               HttpURLConnection conn = (HttpURLConnection) linkURL.openConnection();
+               conn.connect();
+
+               if(conn.getResponseCode() >= 400) {
+                   System.out.println(url + " - Broken Link");
+               }
+           }
+
+
+Shadow DOM:-
+-----------
+
+XPath cannot handle shadow dom elements.
+Only CSS can handle shadow dom elements.
+
+1) This Element is inside single shadow DOM.
+
+SearchContext shadow = driver.findElement(By.cssSelector("#shadow-root")).getShadowRoot();
+Thread.sleep(1000);
+shadow.findElement(By.cssSelector("#shadow-element"));
+
+2) This Element is inside 2 nested shadow DOM.
+
+SearchContext shadow0 = driver.findElement(By.cssSelector("#shadow-root")).getShadowRoot();
+Thread.sleep(1000);
+SearchContext shadow1 = shadow0.findElement(By.cssSelector("#inner-shadow-dom")).getShadowRoot();
+Thread.sleep(1000);
+shadow1.findElement(By.cssSelector("#nested-shadow-element"));
+
+3) This Element is inside 3 nested shadow DOM.
+
+SearchContext shadow0 = driver.findElement(By.cssSelector("#shadow-root")).getShadowRoot();
+Thread.sleep(1000);
+
+SearchContext shadow1 = shadow0.findElement(By.cssSelector("#inner-shadow-dom")).getShadowRoot();
+Thread.sleep(1000);
+
+SearchContext shadow2 = shadow1.findElement(By.cssSelector("#nested-shadow-dom")).getShadowRoot();
+Thread.sleep(1000);
+
+shadow2.findElement(By.cssSelector("#multi-nested-shadow-element"));
+
+Handle svg elements
+--------------------
+//*[name()='path' and contains(@d,'M256,302c8')]
+//a[normalize-space()='']//*[name()='svg']
+//*[name()='path' and contains(@d,'M256.264,0')]

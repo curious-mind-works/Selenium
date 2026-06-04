@@ -1,0 +1,14 @@
+<suite thread-count="5" name = "Suite" parallel="tests">
+    <test name = "Test1" >
+        <classes>
+            <class name = "testNgConcepts.Parallel_A"/>
+        </classes>
+    </test>
+
+    <test name = "Test2" >
+        <classes>
+            <class name = "testNgConcepts.Parallel_B"/>
+        </classes>
+    </test>
+
+</suite>

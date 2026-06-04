@@ -1,0 +1,237 @@
+Day-42
+
+TestNG - Test New Generation - Framework
+
+Advantages: -
+-----------
+1) Test cases & test suites (Annotation)
+2) Grouping of test cases.
+3) Dependency
+4) Prioritize
+5) Parameterization
+6) Parallel testing
+7) Reports
+
+@Test - annotation
+
+1) TestNG execute test methods based on alphabetical order.
+2) @Test(priority=num) controls the order of execution.
+3) Once you provide priority to the test methods, then order of methods is not considered.
+4) priorities can be random numbers( no need to have consecutive numbers)
+5) If you do not provide priority then default value is Zero (0).
+6) If the priorities are same then again execute methods in alphabetical order.
+7) Negative values are allowed in priority.
+8) TestNG execute test methods only if they are having @Test annotation.
+
+Test suite ---> test cases -----> test steps
+xml file ----> classes ----> Test methods
+
+2 things achieved through xml
+-----------------------------
+1) executed group of test cases as a 1 suite
+2) we can generate testng reports ( default)
+
+---------------------------------------------------------------------------------------------------
+
+Day-43
+Annotations:-
+------------
+
+@Test
+@BeforeMethod
+@AfterMethod
+@BeforeClass
+@AfterClass
+@BeforeTest
+@AfterTest
+@BeforeSuite
+@AfterSuite
+
+
+TC1
+1) Login -- @BeforeMethod
+2) Search ---> @Test
+3) Logout --- @AfterMethod
+4) Login
+5) Adv search --- @Test
+6) Logout
+
+TC2
+1) Login --- @BeforeClass
+2) Search --- @Test
+3) Adv search --- @Test
+4) Logout -- @AfterClass
+
+
+XML
+<suite name="mysuite">
+   <test name="mytest1">
+       <classes>
+           <class name="xyz"/>
+       </classes>
+   </test>
+
+   <test name="mytest2">
+       <classes>
+           <class name="abc"/>
+       </classes>
+   </test>
+</suite>
+
+@BeforeSuite is used for one-time global setup like reports.
+@BeforeTest runs before a test block in testng.xml for environment setup.
+@BeforeClass runs once per class for common setup like browser launch.
+@BeforeMethod runs before every test case when we need fresh setup.”
+
+When to use @BeforeSuite -
+Use it for things that should happen only once:
+Initialize Extent Reports
+Load config.properties
+Start Selenium Grid
+Set global variables
+Connect to DB (once)
+
+When to use @BeforeTest -
+Use it when setup should run per test group:
+Set environment (QA / UAT / PROD)
+Set API base URI
+Browser selection (Chrome / Firefox)
+Initialize test data for that test block
+
+Assertion - validation point
+
+2 kinds of assertions
+---------------------
+1) Hard assertions
+2) Soft assertions
+
+Hard assertions
+we can access from "Assert" class
+methods are static
+* if hard assertion failed then rest of the statements will not be executed.
+
+software assertion
+we can access though "SoftAssert" object
+
+SoftAssert sa = new SoftAssert();
+sa.assertTrue()
+
+if soft assertion got failed then rest of the statemtns still execute.
+
+------------------------------------------------------------------------------------------
+
+Day-44
+Dependency methods: -
+-------------------
+openapp
+login
+search
+advsearch
+logout
+
+dependsOnMethods = {"method name1","method name2",....}
+
+grouping
+-------------
+class1 - m1 m2 m3...
+class2 - m4, m5, m6...
+class3 -- m7,m8,m9....
+---
+sanity
+regression
+functional
+
+
+loginByfacebook - sanity
+loginby email   - sanity
+login by twitter - sanity
+
+signupbyfacebook - regression
+signupbytwitter  - regression
+signupbyemail    - regression
+
+paymentinrupees  - sanity, regression (functional)
+paymentindollars - sanity, regression (functional)
+
+1) all sanity tests
+2) all regression tests
+3) all sanity but not regression
+4) all regression but not sanity
+5) all methods which are belongs to both sanity & regression
+
+
+------------------------------------------------------------------------------------------------
+
+Day-45
+Parameterization: -
+-----------------
+
+1) @DataProvider -- Data driven testing
+2) Using xml file -- Parallel testing
+
+parallel testing using xml file
+-------------------------------
+step1) created test case
+step2) create xml file then run test case through xml
+step3) passed browser name, url as parameters from xml file to setup() method
+step4) execute test case on chrome,firefox & Edge (serial execution)
+step5) execute test case on chrome,firefox & edge (parallel execution)
+
+------------------------------------------------------------------------------------------------
+
+Day-46
+TestNG Listeners: -
+-----------------
+
+1) create test case
+2) create listener class
+3) create xml file and include both test case & listener class
+
+2 ways to implement listener class
+----------------------------------
+Method1
+------
+class myListner implements ITestListener
+{
+}
+
+Method2
+------------
+class myListener extends TestListenerAdapter
+{
+}
+
+
+Extent report
+ExtentSparkReporter
+ExtentReports
+ExtentTest
+
+We met like strangers, just saw eachother's pic and had little conversation,
+trying to understand each other in little amount of time, and thinking is this the right person,
+Nervousness was there, Confusion was there and One question - Yes or No?
+No one believe how this system works. it is like a gamble for both of us,
+You have to say Yes or No, And it is going to decide two life destiny,
+Choosing wrong wife means full of worry and Chosing wrong husband means same.
+We played this gamble and said - Yes, 2 Yes became decision of two life,
+Suddenly Relations changed for both of us. between me and you and our family,
+I belived in reincarnation and karma also, and as per karma every relation have a reason.
+So now we know each other from past right? So Both Yes was part of this journey.
+Date have been decided that is 11, Angle no. Looks like even angle wants to have this marriage,
+Let me think more deeply what kind our relationship will be,
+What I will be for you, I will be your winter (Calm & Cool) when you will be in summer (Angry)
+I will be Summer (Warm Support) when you will be in Winter (ill health)
+I will be Rainy (Joy & Happiness) when you will be in Spring (Mood Off)
+Only I will be your or you will be mine for me too?
+In Our life we will have phases like day (Good Time) and Night (Bad Time)
+During day I can manage I will be your light but when it will be night
+And Darkness will be there, You will be there to guide me under calm & cold Moonlight
+One Day there will be like anavashya,
+I will not have sunlight and you will not moonlight, Darkness everywhere
+I could see you (under your POV) even you will be in darkness,
+We can survive by faith (holding hands) and trust () and that night will also, we can survive.
+When I will not talk to you, Prepare my favroite food. I will be fine.
+I know When you will not talk because of anger or anything else One movie ticket, or Trip will be Enough for You
+We will have late night walk, unplanned trips and surprises to keep life alive.
+
+

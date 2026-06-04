@@ -1,0 +1,15 @@
+<suite name = "Suite">
+    <test name = "Test">
+        <groups>
+            <run>
+                <include name = "smoke"/>
+                <include name = "sanity"/>
+                <exclude name = "functional"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name = "testNgConcepts.Grouping"/>
+        </classes>
+    </test>
+</suite>

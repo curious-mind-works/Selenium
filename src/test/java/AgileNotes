@@ -1,0 +1,74 @@
+## Agile model /Agile methodology /Agile process.
+
+It is an Iterative and Incremental Approach.
+Agile is an Iterative and Incremental Process.
+
+## Agile principles
+
+1. Customer no need to wait for long time.
+2. We develop, test and release piece of software to the customer with few number of features.
+3. We can accept/accomodate requirement changes.
+
+There will be good communication between Customer, Business Analyst, Developers & Testers.
+
+## Advantages:
+Requirement changes are allowed in any stage of development (or) We can accommodate Requirement changes in the middle of development.
+Releases will be very fast( Weekly)
+Customer no need to wait for long time.
+Good communication between team.
+It is very easy model to adopt.
+
+Disadvantage:
+Less focus on design and documentation since we deliver software very faster.
+
+## Scrum
+
+Scrum is a framework through which we build software product by following Agile Principles.
+Scrum includes group of people called as Scrum team. Normally contains 5-9 members.
+
+1. Product Owner
+2. Scrum Master
+3. Dev Team
+4. QA Team
+
+Product Owner :
+Define the features of the product
+Prioritize features according to market value
+Adjust features and priority every iteration, as needed
+Accept or reject work results.
+
+Scrum Master:
+The main role is facilitating and driving the agile process.
+
+Developers and QA:
+Develop and Test the software.
+
+## Scrum Terminology
+
+User Story : A Feature/module in a software
+
+Epic : Collection of user stories.
+
+Product backlog : Contains list of user stories. Prepared by product owner.
+
+Sprint/Iteration : Period of time to complete the user stories, decided by the product owner and team, usually 2-4 weeks of time.
+
+Sprint planning meeting: Meeting conducts with the team to define what can be delivered in the sprint and duration.
+
+Sprint backlog : List of committed stories by Dev/QA for specific sprint.
+
+Scrum meeting : Meeting conducted by Scrum Master everyday 15 mins. Called as scrum call/Standup meeting.
+
+
+What did you do yesterday?
+What will you do today?
+Are there any impediments in your way?
+
+Sprint retrospective meeting: conducts meeting after completion of sprint. The entire team,
+including both the ScrumMaster and the product owner should participate.
+
+Story point : Rough estimation of user stories, will be given by Dev & QA in the form of Fibonacci series.
+
+0 1 1 2 3 5 8.....
+
+1 story point = 1 hour/ 1 day(6 hours)

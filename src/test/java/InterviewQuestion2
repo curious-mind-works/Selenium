@@ -1,0 +1,379 @@
+Here are **300 mostly asked Selenium, TestNG, and Framework interview questions** categorized for easy preparation.
+
+---
+
+# ✅ SELENIUM – CORE (1–120)
+
+### 🔹 Selenium Basics (1–25)
+
+1. What is Selenium?
+2. What are the components of Selenium?
+3. What is Selenium WebDriver?
+4. Difference between Selenium RC and WebDriver?
+5. What is Selenium Grid?
+6. What are the advantages of Selenium?
+7. What are the limitations of Selenium?
+8. What browsers does Selenium support?
+9. What is the latest version of Selenium?
+10. What is WebDriver architecture?
+11. How does Selenium communicate with browsers?
+12. What is W3C WebDriver protocol?
+13. Difference between get() and navigate().to()?
+14. Difference between close() and quit()?
+15. What are driver classes in Selenium?
+16. How to launch Chrome browser?
+17. How to handle SSL certificate errors?
+18. What are DesiredCapabilities?
+19. What is ChromeOptions?
+20. How to run tests in headless mode?
+21. What is Page Object Model?
+22. What is Selenium Manager?
+23. How to maximize browser?
+24. How to get page title?
+25. How to get current URL?
+
+---
+
+### 🔹 Locators (26–45)
+
+26. What are different types of locators?
+27. Which locator is fastest?
+28. Difference between id and name locator?
+29. How to write XPath?
+30. Absolute vs Relative XPath?
+31. What is CSS Selector?
+32. Difference between XPath and CSS?
+33. How to handle dynamic XPath?
+34. What are XPath axes?
+35. What is contains() in XPath?
+36. What is starts-with()?
+37. How to locate sibling elements?
+38. How to locate parent element?
+39. What is normalize-space()?
+40. What is indexing in XPath?
+41. How to handle dynamic IDs?
+42. How to inspect elements?
+43. How to handle shadow DOM?
+44. How to locate hidden elements?
+45. What is By class in Selenium?
+
+---
+
+### 🔹 WebDriver Methods (46–70)
+
+46. What are get methods?
+47. What are navigation methods?
+48. What are conditional methods?
+49. What are wait methods?
+50. What is getTitle()?
+51. What is getPageSource()?
+52. What is getWindowHandle()?
+53. What is getWindowHandles()?
+54. What is switchTo()?
+55. What is manage()?
+56. How to take screenshot?
+57. How to handle alerts?
+58. How to accept alert?
+59. How to dismiss alert?
+60. How to get alert text?
+61. How to switch frames?
+62. Difference between frame() and defaultContent()?
+63. How to switch windows?
+64. How to refresh page?
+65. What is navigate().back()?
+66. What is navigate().forward()?
+67. What is clear()?
+68. What is submit()?
+69. What is click()?
+70. What is sendKeys()?
+
+---
+
+### 🔹 Waits (71–85)
+
+71. What is synchronization?
+72. What is implicit wait?
+73. What is explicit wait?
+74. What is fluent wait?
+75. Difference between implicit and explicit wait?
+76. What is WebDriverWait?
+77. What is ExpectedConditions?
+78. What happens if implicit and explicit waits are combined?
+79. How to wait for element to be clickable?
+80. How to wait for visibility of element?
+81. How to handle dynamic loading?
+82. How to wait for page load?
+83. How to handle stale element exception?
+84. What is polling frequency?
+85. What is timeout exception?
+
+---
+
+### 🔹 Web Elements Handling (86–110)
+
+86. How to handle dropdown?
+87. What is Select class?
+88. Methods of Select class?
+89. How to handle bootstrap dropdown?
+90. How to handle hidden dropdown?
+91. How to handle radio buttons?
+92. How to handle checkboxes?
+93. How to handle auto-suggestions?
+94. How to handle date picker?
+95. How to handle web tables?
+96. Static vs Dynamic web table?
+97. How to handle pagination table?
+98. How to upload file?
+99. How to download file?
+100. How to handle mouse actions?
+101. What is Actions class?
+102. What is drag and drop?
+103. How to handle keyboard actions?
+104. How to handle slider?
+105. How to handle tooltip?
+106. How to scroll page?
+107. How to handle iframe?
+108. How to handle multiple windows?
+109. How to handle notifications?
+110. How to handle broken links?
+
+---
+
+### 🔹 Exceptions & Advanced (111–120)
+
+111. What is NoSuchElementException?
+112. What is StaleElementReferenceException?
+113. What is ElementNotInteractableException?
+114. What is TimeoutException?
+115. What is ElementClickInterceptedException?
+116. How to handle exceptions in Selenium?
+117. What is PageFactory?
+118. What is @FindBy annotation?
+119. What is Relative Locators (Selenium 4)?
+120. What is CDP in Selenium 4?
+
+---
+
+# ✅ TESTNG – (121–200)
+
+### 🔹 TestNG Basics (121–140)
+
+121. What is TestNG?
+122. Advantages of TestNG?
+123. Difference between JUnit and TestNG?
+124. What is testng.xml?
+125. What are annotations in TestNG?
+126. What is @Test?
+127. What is @BeforeMethod?
+128. What is @AfterMethod?
+129. What is @BeforeClass?
+130. What is @AfterClass?
+131. What is @BeforeSuite?
+132. What is @AfterSuite?
+133. What is @BeforeTest?
+134. What is @AfterTest?
+135. What is @BeforeGroups?
+136. What is @AfterGroups?
+137. How to prioritize test cases?
+138. How to disable test case?
+139. What is invocationCount?
+140. What is threadPoolSize?
+
+---
+
+### 🔹 TestNG Features (141–170)
+
+141. What is grouping?
+142. How to run specific group?
+143. What is dependency in TestNG?
+144. What is dependsOnMethods?
+145. What is dependsOnGroups?
+146. What is DataProvider?
+147. How to pass multiple parameters?
+148. What is @Parameters annotation?
+149. Difference between DataProvider and Parameters?
+150. How to read data from Excel?
+151. What is assertion?
+152. Types of assertions?
+153. What is hard assertion?
+154. What is soft assertion?
+155. What is Reporter class?
+156. What is ITestListener?
+157. What is IRetryAnalyzer?
+158. How to rerun failed test cases?
+159. How to generate reports?
+160. What is emailable-report?
+161. What is test-output folder?
+162. How to skip test?
+163. What is timeout in @Test?
+164. What is alwaysRun=true?
+165. What is parallel execution?
+166. Types of parallel execution?
+167. How to run tests in parallel?
+168. What is thread count?
+169. How to handle failed dependency?
+170. What is factory annotation?
+
+---
+
+### 🔹 TestNG Advanced (171–200)
+
+171. What is parameterization?
+172. What is cross browser testing using TestNG?
+173. How to run multiple suites?
+174. How to create custom listener?
+175. What is ITestContext?
+176. What is ITestResult?
+177. How to capture screenshot on failure?
+178. How to integrate TestNG with Jenkins?
+179. How to run tests from command line?
+180. What is Maven Surefire plugin?
+181. How to configure testng.xml?
+182. What is test tag in xml?
+183. What is suite tag?
+184. What is include & exclude in xml?
+185. How to retry failed test cases?
+186. What is skipException?
+187. How to handle test execution order?
+188. What is preserve-order?
+189. How to share data between tests?
+190. What is test dependency?
+191. How to use listeners in xml?
+192. What is extent report?
+193. How to generate custom reports?
+194. What is parallel = methods?
+195. What is parallel = classes?
+196. What is parallel = tests?
+197. What is data-driven testing?
+198. What is keyword-driven testing?
+199. What is hybrid testing?
+200. What is BDD testing?
+
+---
+
+# ✅ FRAMEWORK – (201–300)
+
+### 🔹 Framework Basics (201–225)
+
+201. What is automation framework?
+202. Types of automation frameworks?
+203. What is Data Driven framework?
+204. What is Keyword Driven framework?
+205. What is Hybrid framework?
+206. What is POM framework?
+207. What is Page Object Model?
+208. Advantages of POM?
+209. How to design framework?
+210. What is folder structure in framework?
+211. What is base class?
+212. What is reusable components?
+213. What is utility class?
+214. What is config.properties?
+215. How to read properties file?
+216. How to handle logging?
+217. What is Log4j?
+218. What is Maven?
+219. What is pom.xml?
+220. What is dependency management?
+221. What is build lifecycle?
+222. What is Git?
+223. What is CI/CD?
+224. What is Jenkins?
+225. How to integrate framework with Jenkins?
+
+---
+
+### 🔹 Advanced Framework (226–260)
+
+226. How to implement cross browser framework?
+227. How to implement parallel execution?
+228. How to implement reporting?
+229. What is Extent Report?
+230. How to implement screenshot utility?
+231. How to handle failed tests?
+232. What is TestBase class?
+233. How to implement PageFactory?
+234. How to create generic methods?
+235. What is DriverFactory?
+236. How to implement Singleton pattern?
+237. How to implement ThreadLocal driver?
+238. What is design pattern?
+239. What design patterns used in framework?
+240. What is Factory design pattern?
+241. What is Singleton pattern?
+242. What is Strategy pattern?
+243. What is Dependency Injection?
+244. What is Cucumber?
+245. What is BDD framework?
+246. What is feature file?
+247. What is step definition?
+248. What is Gherkin?
+249. What is hooks in Cucumber?
+250. What is scenario outline?
+251. How to pass data in Cucumber?
+252. What is Runner class?
+253. How to integrate Cucumber with TestNG?
+254. What is API testing in framework?
+255. How to integrate RestAssured?
+256. What is Allure report?
+257. How to implement logging?
+258. What is environment setup?
+259. What is test data management?
+260. What is object repository?
+
+---
+
+### 🔹 Real-Time & Scenario-Based (261–300)
+
+261. Explain your current framework.
+262. What challenges you faced in automation?
+263. How do you handle dynamic elements?
+264. How do you handle synchronization issues?
+265. How do you reduce execution time?
+266. How do you handle flaky tests?
+267. How do you handle test data?
+268. How do you manage environment URLs?
+269. How do you implement CI/CD?
+270. How do you generate reports?
+271. How do you perform cross-browser testing?
+272. How do you manage version control?
+273. How do you review automation code?
+274. How do you improve framework performance?
+275. How do you handle large test suites?
+276. How do you implement tagging?
+277. How do you implement parallel in Grid?
+278. What is Docker in automation?
+279. What is Selenium Grid?
+280. What is cloud testing?
+281. What is BrowserStack?
+282. What is Sauce Labs?
+283. How to run tests in headless mode?
+284. How to debug failed test?
+285. How to capture logs?
+286. How to implement retry logic?
+287. How to handle popups?
+288. How to handle multiple tabs?
+289. How to optimize XPath?
+290. How to make framework scalable?
+291. What is best locator strategy?
+292. What is difference between findElement and findElements?
+293. How to implement soft assertion?
+294. How to handle database validation?
+295. How to integrate API and UI testing?
+296. What is shift-left testing?
+297. How to maintain framework?
+298. How to migrate framework to Selenium 4?
+299. What improvements you added in framework?
+300. Why should we hire you for automation role?
+
+---
+
+If you want, I can now:
+
+* ✅ Convert these into **15–20 important high-level answers**
+* ✅ Create **mock interview (Q&A format)**
+* ✅ Provide **Java code examples for top 50 questions**
+* ✅ Make a **PDF-style revision sheet**
+* ✅ Create **Gemini interview-focused question set**
+
+Tell me what you want next 🚀

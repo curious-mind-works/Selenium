@@ -1,0 +1,10 @@
+<suite name = "Suite">
+    <listeners>
+    <listener class-name = "testNgConcepts.Listner"/>
+    </listeners>
+    <test name = "Test">
+        <classes>
+            <class name = "testNgConcepts.DependOnMethod"/>
+        </classes>
+    </test>
+</suite>
